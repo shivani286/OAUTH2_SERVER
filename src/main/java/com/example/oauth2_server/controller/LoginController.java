@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.oauth2_server.dao.redis.UserJedisDao;
 import com.example.oauth2_server.dto.LoginUserAuthenticationDetails;
 import com.example.oauth2_server.dto.PasswordCreationRequest;
 import com.example.oauth2_server.dto.UserCredentials;
@@ -24,8 +23,7 @@ import com.example.oauth2_server.service.LoginUserAuthenticationService;
 public class LoginController {
 	@Autowired
 	private LoginUserAuthenticationService userAuthenticationService;
-	@Autowired
-	private UserJedisDao userJedisRepository;
+
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
@@ -45,7 +43,7 @@ public class LoginController {
 		details.setUserAuthToken(session.getId());
 		logger.info("session id"+session.getId());
 
-		userJedisRepository.save(details);
+		//userJedisRepository.save(details);
 		return details;
 	}
 	
