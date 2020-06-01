@@ -31,14 +31,19 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 	
 	  @Override
 	    public void configure(HttpSecurity http) throws Exception {
+	        /*http
+	        .cors().and().csrf().disable();
+	         http.authorizeRequests()
+	        .antMatchers("/oauth/token").permitAll()
+	        .anyRequest().authenticated()
+	        .and().httpBasic();*/
+	        
 		  http
           .requestMatchers()
           .antMatchers("/oauth/token", "/login**", "/error**")
-          .and()
-          .authorizeRequests()
+          .and().authorizeRequests()
           .anyRequest().authenticated()
-          .and()
-          .formLogin().permitAll();
+          .and().formLogin().permitAll();
 	    }
 	  
 	  @Bean
@@ -46,5 +51,5 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 	    public AuthenticationManager authenticationManagerBean() throws Exception {
 	        return super.authenticationManagerBean();
 	    } 
-} 
-				
+	
+}
