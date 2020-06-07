@@ -24,7 +24,7 @@ import com.oauth2.example.authorizationserver.model.User;
 import com.oauth2.example.authorizationserver.model.UserPassword;
 import com.oauth2.example.authorizationserver.exceptionmapping.ActivationLinkExpiryException;
 import com.oauth2.example.authorizationserver.service.RegistrationService;
-//import com.oauth2.example.authorizationserver.util.TokenGenerator;
+import com.oauth2.example.authorizationserver.util.TokenGenerator;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -51,7 +51,7 @@ public class RegistrationServiceImpl implements RegistrationService{
 		logger.info("create new NewRegistration ");
 		
 		registration.setCreatedOn(new Date());
-		//registration.setConfirmationCode(TokenGenerator.generateToken());
+		registration.setConfirmationCode(TokenGenerator.generateToken());
 		registration.setCompanyName(registration.getCompanyName());
 		registration.setEmailId(registration.getEmailId());
 		registration.setFirstName(registration.getFirstName());
@@ -75,7 +75,7 @@ public class RegistrationServiceImpl implements RegistrationService{
 		logger.info("update existing registration ");
 
 		registration.setCreatedOn(new Date());
-	//	registration.setConfirmationCode(TokenGenerator.generateToken());
+		registration.setConfirmationCode(TokenGenerator.generateToken());
 		registrationDao.saveAndFlush(registration);
 
 	//	sendRegistrationEmail(registration);
@@ -151,6 +151,7 @@ public class RegistrationServiceImpl implements RegistrationService{
 		user.setEmailId(registration.getEmailId());
 		user.setContactNumber(registration.getPrimaryContactNumber());
 		user.setOrganization(Objects.nonNull(createOrg) ? createOrg : null);
+		user.setCompanyName(registration.getCompanyName());
 		user.setCreatedOn(new Date());
 		user.setUpdatedOn(new Date());
 		user.setEnabled(true);
