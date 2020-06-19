@@ -28,4 +28,5 @@
 /home/uxd/Desktop/personal-projects/oauth2_server_with_jdbc/authorizationserver/src/main/java/com/oauth2/example/authorizationserver/dto/UserCredentials.java
 /home/uxd/Desktop/personal-projects/oauth2_server_with_jdbc/authorizationserver/src/main/java/com/oauth2/example/authorizationserver/service/LoginUserAuthenticationService.java
 /home/uxd/Desktop/personal-projects/oauth2_server_with_jdbc/authorizationserver/src/main/java/com/oauth2/example/authorizationserver/service/UserService.java
+/home/uxd/Desktop/personal-projects/oauth2_server_with_jdbc/authorizationserver/src/main/java/com/oauth2/example/authorizationserver/util/TokenGenerator.java
 /home/uxd/Desktop/personal-projects/oauth2_server_with_jdbc/authorizationserver/src/main/java/com/oauth2/example/authorizationserver/dto/LoginUserAuthenticationDetails.java
