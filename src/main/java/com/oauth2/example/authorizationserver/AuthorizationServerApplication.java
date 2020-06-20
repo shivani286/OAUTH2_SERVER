@@ -20,8 +20,4 @@ public class AuthorizationServerApplication {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
-    @Bean
-	public TokenStore tokenStore() {
-		return new InMemoryTokenStore();
-	}
 }
