@@ -44,6 +44,18 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
           .and().authorizeRequests()
           .anyRequest().authenticated()
           .and().formLogin().permitAll();
+		  
+		 /* http
+			.authorizeRequests()
+			.antMatchers("/register","/login","/h2-console/**","/mylogin","/verify/**").permitAll()
+				.anyRequest().authenticated()
+				.and()			
+				.formLogin().loginPage("/login")		
+				//.and().csrf().disable().rememberMe().key("myremembermekey")			
+				.and().logout().logoutUrl("/logout").logoutSuccessUrl("/login").deleteCookies("remember-me")
+				.and().oauth2Login().loginPage("/login");
+			http.headers().frameOptions().disable();*/
+			
 	    }
 	  
 	  @Bean

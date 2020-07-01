@@ -16,7 +16,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 public class AuthorizationSreverConfig extends AuthorizationServerConfigurerAdapter {
 
 	@Autowired
-	AuthenticationManager authenticationManager;
+	private AuthenticationManager authenticationManager;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;

@@ -28,36 +28,4 @@ public class ServletInitializer {
 		return new InMemoryTokenStore();
 	}
 	
-	/*@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(ServletInitializer.class);
-	}
-
-	 @Bean
-	 HttpSessionStrategy httpSessionStrategy() {
-	    return new HeaderHttpSessionStrategy();
-	 }
-	 
-	@Bean
-	public static ConfigureRedisAction configureRedisAction() {
-		return ConfigureRedisAction.NO_OP;
-	}*/
-	
-	/*@Bean
-	  JedisConnectionFactory jedisConnectionFactory(){
-	    return new JedisConnectionFactory();
-	  }
-
-	@Bean
-	public RedisTemplate<String, Object> redisTemplate() {
-		final RedisTemplate<String, Object> template = new RedisTemplate<String, Object>();
-		template.setConnectionFactory(jedisConnectionFactory());
-		return template;
-	}
-	
-	 @Bean
-	    public HttpSessionSecurityContextRepository httpSessionSecurityContextRepository() {
-	        return new HttpSessionSecurityContextRepository();
-	    }*/
-	
 }
